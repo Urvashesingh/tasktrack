@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://tasktrack-7pud.onrender.com";
 const statuses = ["todo", "doing", "done"];
 
 export default function Home() {
