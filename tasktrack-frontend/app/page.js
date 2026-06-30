@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
-const API_URL = "http://localhost:3001";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
 const statuses = ["todo", "doing", "done"];
 
 export default function Home() {
@@ -34,6 +34,8 @@ export default function Home() {
   }
 
   useEffect(() => {
+    // Load from the Express API when the browser first opens this page.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadTodos();
   }, []);
 
